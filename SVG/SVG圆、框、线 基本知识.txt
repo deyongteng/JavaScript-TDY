@@ -1,0 +1,45 @@
+<circle cx="43" cy="43" r="2"fill="rgb(255, 226, 160)" stroke="rgb(255, 226, 160)" stroke-width="5"></circle>
+
+画圆：<circle></circle>
+
+可视区left：cx="value";
+
+可视区top: cy="value";
+
+圆半径：r="value";
+
+填充： fill="color";//默认颜色是黑色
+
+边框:stroke="color";
+
+边框宽度：stroke-width="value";
+
+
+<line x1="65" y1="43" x2="44" y2="43" stroke="rgb(255, 226, 160)" stroke-width="2"></line>
+
+画线段:<line></line>;
+
+线段左侧宽度：x1="value";
+
+线段右侧宽度：x2="value";
+
+线段左侧高度：y1="value";
+
+线段右侧高度：y2="value";
+
+画方：<rect></rect>
+
+方宽:width="value";
+
+方高：height="value";
+
+可视区left：x="value";
+
+可视区top：y="value";
+
+颜色：fill="color";//默认颜色是黑色;
+
+边角x:rx="value"; //修饰边角
+
+边角y:ry="value";//修饰边角 （如果只写一个值的时候 rx或ry的值会是一样）
+

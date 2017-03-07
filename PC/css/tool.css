@@ -1,0 +1,42 @@
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.xiaochu{
+	margin: 0;
+}
+.menu:hover ul{
+	display: block;
+}
+.second1:hover .second_1{
+	display: block;
+}
+.second2:hover .second_2{
+	display: block;
+}
+.industry_text1:hover{
+	background: #6bc30d;
+	color: #fff;
+}
+.second3:hover .second_3{
+	display: block;
+}
+.second4:hover .second_4{
+	display: block;
+}
+.second5:hover .second_5{
+	display: block;
+}
+.newest_box:hover .newest_menu{
+	display: block;
+}
+.colour_content:hover{
+	position: absolute;
+	z-index: 3;
+	transform: scale(1.4);
+}
+.paging_text:hover, .one{
+	background: #70ca10;
+	color: #fff;
+}

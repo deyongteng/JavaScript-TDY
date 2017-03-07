@@ -1,0 +1,26 @@
+@media only all and (max-width:1217px){
+	.unify{
+		width: 880px;
+	}
+	.navigation,
+	.notification_box{
+		display: none;
+	}
+	.ad_box{
+		height: 3404px;
+	}
+}
+@media only all and (max-width:970px){
+	.unify{
+		width: 580px;
+	}
+	.ad_box{
+		height: 4704px;
+	}
+	.choice_box{
+		display: none;
+	}
+	.copyright{
+		width: 488px;
+	}
+}

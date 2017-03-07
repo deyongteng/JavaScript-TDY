@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="3D.css" />
+	</head>
+	<body>
+		<div id="tdy">
+			<div id="tdy_box"></div>	
+			<input type="button" name="" id="tdy_click" value="时钟居中" />
+			<input type="button" name="but" id="tdy_but1" value="凸动型" />
+			<input type="button" name="but" id="tdy_but2" value="旋转型" />
+		</div>
+		<script type="text/javascript">
+			var box=document.getElementById('tdy_box');
+			var click=document.getElementById('tdy_click');
+			var but=document.getElementById('tdy_but');
+			var but1=document.getElementById('tdy_but1');
+			var but2=document.getElementById('tdy_but2');
+			var arr=["url(img/0.JPG)","url(img/1.JPG)","url(img/2.JPG)","url(img/3.JPG)","url(img/4.JPG)","url(img/5.JPG)","url(img/6.JPG)","url(img/7.JPG)","url(img/8.JPG)","url(img/9.JPG)"];
+		
+			var sty;
+			var onoff=true;
+			var tam="";
+			var tam2="";
+			//时钟居中
+			click.onclick=function(){
+				box.style.transform="rotateY(0deg)";
+				click.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.5)";
+				but1.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)";
+				but2.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)";
+			}
+		
+			var str="";
+			for (var i = 0; i < 6 ;i++) {
+				str+="<ul id='tdy_li_box'>"
+				for (var j = 0; j < 10; j++) {
+					str+="<li style='background:"+arr[j]+"'></li>"
+				}
+				str+="</ul>";
+			}
+			box.innerHTML=str;
+			var uls=document.getElementsByTagName('ul');
+			for (var i = 0; i < uls.length; i++) {
+					uls[i].style.left=i*100+"px";
+					uls[i].style.marginLeft="100px";
+			}
+			var  lis=document.getElementsByTagName('li');
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].style.backgroundSize="100% 100%";
+				sty=lis[i].style;
+				console.log(sty)
+			}
+			
+		//旋转型	
+			but2.onclick=function(){
+					clearInterval(tam2);
+					but2.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.5)";
+					but1.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)";
+					click.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)";
+				if(onoff){
+					box.style.perspectiveOrigin="-500px";
+					box.style.perspective="2000px";
+					setTimeout(function(){
+						box.style.transition=3+"s";
+						box.style.perspectiveOrigin="center";
+					},300)
+					
+					for (var i = 0; i < uls.length; i++) {
+						uls[i].style.perspective="";
+					}
+					
+					for (var i = 0; i < lis.length; i++) {
+						lis[i].style.transform="rotateX("+i*36+"deg)"+"translateZ(60px)";
+					}
+					
+					tam=setInterval(function(){
+						var now=new Date();
+						var s=now.getSeconds();
+						var m=now.getMinutes();
+						var h=now.getHours();
+						s=String(s);
+						m=String(m);
+						h=String(h);
+						//秒
+						if(s.length==1){
+							uls[5].style.transform="rotateX(-"+(s*36)+"deg)";
+							uls[4].style.transform="rotateX(-0deg)";
+						}else if(s.length==2){
+							uls[5].style.transform="rotateX(-"+((s.slice(1))*36)+"deg)";
+							uls[4].style.transform="rotateX(-"+((s.substr(0,1))*36)+"deg)";
+						}
+						
+						//分
+						if(m.length==1){
+							uls[3].style.transform="rotateX(-"+((m*36))+"deg)";
+							uls[2].style.transform="rotateX(-0deg)";
+						}else if(m.length==2){
+							uls[3].style.transform="rotateX(-"+((m.slice(1))*36)+"deg)";
+							uls[2].style.transform="rotateX(-"+((m.substr(0,1))*36)+"deg)";
+						} 
+						//时
+						if(h.length==1){
+							uls[1].style.transform="rotateX(-"+((h*36))+"deg)";
+							uls[0].style.transform="rotateX(-0deg)";
+						}else if(h.length==2){
+							uls[1].style.transform="rotateX(-"+((h.slice(1))*36)+"deg)";
+							uls[0].style.transform="rotateX(-"+((h.substr(0,1))*36)+"deg)";
+						}
+						
+					},1000)
+				//拖拽	
+				tuoZ()
+					onoff=false;
+				}	
+			}
+			
+			//凸动型
+			fn();
+		but1.onclick=function(){
+			clearInterval(tam);
+			but1.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.5)";
+			but2.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)";
+			click.style.boxShadow=" 0px 0px 30px 0px rgba(217,218,218,0.3)"; 
+			if(onoff==false){
+					box.style.perspectiveOrigin="";
+					box.style.perspective="";
+					for (var i = 0; i < lis.length; i++) {
+							lis[i].style.transform="";
+						}
+					for (var i = 0; i < uls.length; i++) {
+							uls[i].style.transform="";
+						}
+					 fn();				
+					onoff=true;
+				}
+			}
+				function fn(){
+						for (var i = 0; i < uls.length; i++) {
+							uls[i].style.perspective="2000px";
+						}
+						
+					tam2=setInterval(function(){
+							var now=new Date();
+							var s=now.getSeconds();
+							var m=now.getMinutes();
+							var h=now.getHours();
+							s=String(s);
+							m=String(m);
+							h=String(h);	
+							
+							xinT(5,s);
+							xinT(3,m)
+							xinT(1,h)
+						function xinT(t,d){
+							for (var i = 0; i < uls[t].children.length; i++) {
+								uls[t].children[i].style.transform="translateZ(0px)";
+								uls[t].children[i].style.zIndex="0";
+							}
+							for (var i = 0; i < uls[t-1].children.length; i++) {
+								uls[t-1].children[i].style.transform="translateZ(0px)";
+								uls[t-1].children[i].style.zIndex="0";
+							}
+		
+								if(d.length==1){
+									uls[t-1].children[0].style.transform="translateZ(400px)";
+									uls[t-1].children[0].style.zIndex="1";
+									uls[t].children[d].style.transform="translateZ(400px)";
+									uls[t].children[d].style.zIndex="1";
+								}
+								
+								if(d.length==2){
+									uls[t-1].children[d.substr(0,1)].style.transform="translateZ(400px)";
+									uls[t-1].children[d.substr(0,1)].style.zIndex="1";
+									uls[t].children[d.substr(1,1)].style.transform="translateZ(400px)";
+									uls[t].children[d.substr(1,1)].style.zIndex="1";
+								}
+						}
+							
+					},1000)
+				tuoZ()
+			}
+		function tuoZ(){
+				document.onmousedown=function(e){
+						
+						var x=e.clientX-box.offsetLeft;
+						
+						document.onmousemove=function(e){		
+						var yZ=e.clientX-x;	
+							if(yZ<70){
+								yZ=-70;
+								console.log(yZ)
+							}
+							if(yZ>70){
+								yZ=70;
+								console.log(yZ)
+							}
+							box.style.transform="rotateY("+yZ+"deg)";
+							return false;
+						}
+						document.onmouseup=function(){
+							document.onmousemove=null;
+						}
+					}
+			}
+		</script>
+	</body>
+</html>
