@@ -1,0 +1,123 @@
+@rem:16rem;
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    border: none;
+    vertical-align: top;
+}
+#box{
+    width: 320/@rem;
+    height: 100%;
+}
+
+.ulBox{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*第一屏*/
+.liBox1,
+.liBox2{
+    width: 100%;
+    height: 100%;
+    padding: 0 10/@rem;
+    background-size:100% 100% ;
+    position: absolute;
+    left: 0;
+    top: 0;
+    // display: none;
+}
+.img1_0imgBox{
+    width: 280/@rem;
+    height: 246/@rem;
+    background-color:#FFF;
+    margin-top: 46/@rem;
+    border-radius: 14/@rem;
+    padding: 10px 10px;
+    margin: 46/@rem auto 0 auto;
+}
+.img1_0imgBox>div>img{
+    width: 260/@rem;
+    height: 226/@rem;
+    border-radius: 14px;
+}
+.img1_1imgBox{
+    margin-top: 16/@rem;
+    text-align: center;
+    line-height: 24/@rem;
+    font-size: 24/@rem;
+    font-family: arial;
+    color: #FFFFFF;
+    padding: 10px 15px;
+}
+.img1_2imgBox{
+    text-align: center;
+    height: 40/@rem;
+}
+.img1_2imgBox>img{
+    width: 240/@rem;
+    height: 41/@rem;
+}
+.img1_3imgBox,
+.img1_4imgBox{
+    text-align: center;
+    margin-top: 12/@rem;
+    line-height: 14/@rem;
+    font-size: 14/@rem;
+    color: #FFFFFF;
+    font-family: "微软雅黑";
+}
+
+//第二屏
+.liBox2{
+    background-color:#FFF; 
+}
+.img2_0imgBox,
+.img2_2imgBox{
+    width: 100%;
+    height: 212/@rem;
+    margin-top: 20/@rem;
+}
+.img2_1imgBox{
+    width: 100%;
+    text-align: center;
+    line-height: 38/@rem;
+    font-size: 24/@rem;
+    font-family: "Arial";
+    color: #404449;
+    padding: 10/@rem 0/@rem;
+}
+.img2_2imgBox{
+    margin-top: 0/@rem;
+}
+.img2_0imgBox>span,
+.img2_2imgBox>span{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 212/@rem;
+}
+.img2_0imgBox>span>span,
+.img2_2imgBox>span>span{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: 4s rotateY linear infinite;
+}

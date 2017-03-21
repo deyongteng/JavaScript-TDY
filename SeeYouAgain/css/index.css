@@ -1,0 +1,119 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+#box {
+  width: 20rem;
+  height: 100%;
+}
+.ulBox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/*第一屏*/
+.liBox1,
+.liBox2 {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.625rem;
+  background-size: 100% 100% ;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.img1_0imgBox {
+  width: 17.5rem;
+  height: 15.375rem;
+  background-color: #FFF;
+  margin-top: 2.875rem;
+  border-radius: 0.875rem;
+  padding: 10px 10px;
+  margin: 2.875rem auto 0 auto;
+}
+.img1_0imgBox > div > img {
+  width: 16.25rem;
+  height: 14.125rem;
+  border-radius: 14px;
+}
+.img1_1imgBox {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  font-family: arial;
+  color: #FFFFFF;
+  padding: 10px 15px;
+}
+.img1_2imgBox {
+  text-align: center;
+  height: 2.5rem;
+}
+.img1_2imgBox > img {
+  width: 15rem;
+  height: 2.5625rem;
+}
+.img1_3imgBox,
+.img1_4imgBox {
+  text-align: center;
+  margin-top: 0.75rem;
+  line-height: 0.875rem;
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  font-family: "微软雅黑";
+}
+.liBox2 {
+  background-color: #FFF;
+}
+.img2_0imgBox,
+.img2_2imgBox {
+  width: 100%;
+  height: 13.25rem;
+  margin-top: 1.25rem;
+}
+.img2_1imgBox {
+  width: 100%;
+  text-align: center;
+  line-height: 2.375rem;
+  font-size: 1.5rem;
+  font-family: "Arial";
+  color: #404449;
+  padding: 0.625rem 0rem;
+}
+.img2_2imgBox {
+  margin-top: 0rem;
+}
+.img2_0imgBox > span,
+.img2_2imgBox > span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 13.25rem;
+}
+.img2_0imgBox > span > span,
+.img2_2imgBox > span > span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: 4s rotateY linear infinite;
+}
